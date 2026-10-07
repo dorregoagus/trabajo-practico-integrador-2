@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router'
 import HomePage from '../pages/HomePage'
 import LoginPage from '../pages/LoginPage'
 import RegisterPage from '../pages/RegisterPage'
+import Navbar from '../components/Navbar'
 import PrivateRoutes from './PrivateRoutes'
 import PublicRoutes from './PublicRoutes'
 
@@ -10,7 +11,15 @@ function AppRouter() {
         <BrowserRouter>
             <Routes>
                 <Route element={<PrivateRoutes />}>
-                    <Route path="/" element={<HomePage />} />
+                    <Route
+                        path="/"
+                        element={
+                            <>
+                                <Navbar />
+                                <HomePage />
+                            </>
+                        }
+                    />
                 </Route>
 
                 <Route element={<PublicRoutes />}>
