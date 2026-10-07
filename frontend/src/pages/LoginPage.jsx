@@ -47,44 +47,76 @@ function LoginPage() {
     }
 
     return (
-        <main>
-            <h1>Iniciar sesión</h1>
+        <main className="min-h-screen bg-gray-100 px-6 py-10">
+            <section className="mx-auto max-w-md rounded-xl bg-white p-8 shadow-md">
+                <h1 className="mb-6 text-center text-3xl font-bold text-gray-800">
+                    Iniciar sesión
+                </h1>
 
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="email">Email</label>
-                    <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={form.email}
-                        onChange={handleInputChange}
-                        required
-                    />
-                </div>
+                <form onSubmit={handleSubmit} className="space-y-5">
+                    <div>
+                        <label
+                            htmlFor="email"
+                            className="mb-2 block text-sm font-medium text-gray-700"
+                        >
+                            Email
+                        </label>
 
-                <div>
-                    <label htmlFor="password">Contraseña</label>
-                    <input
-                        id="password"
-                        name="password"
-                        type="password"
-                        value={form.password}
-                        onChange={handleInputChange}
-                        required
-                    />
-                </div>
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            value={form.email}
+                            onChange={handleInputChange}
+                            required
+                            className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-500"
+                        />
+                    </div>
 
-                {error && <p>{error}</p>}
+                    <div>
+                        <label
+                            htmlFor="password"
+                            className="mb-2 block text-sm font-medium text-gray-700"
+                        >
+                            Contraseña
+                        </label>
 
-                <button type="submit" disabled={isLoading}>
-                    {isLoading ? 'Iniciando sesión...' : 'Iniciar sesión'}
-                </button>
-            </form>
+                        <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            value={form.password}
+                            onChange={handleInputChange}
+                            required
+                            className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-500"
+                        />
+                    </div>
 
-            <p>
-                ¿No tenés una cuenta? <Link to="/register">Registrate</Link>
-            </p>
+                    {error && (
+                        <p className="rounded-lg bg-red-100 p-3 text-sm text-red-700">
+                            {error}
+                        </p>
+                    )}
+
+                    <button
+                        type="submit"
+                        disabled={isLoading}
+                        className="w-full rounded-lg bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                        {isLoading ? 'Iniciando sesión...' : 'Iniciar sesión'}
+                    </button>
+                </form>
+
+                <p className="mt-6 text-center text-sm text-gray-600">
+                    ¿No tenés una cuenta?{' '}
+                    <Link
+                        to="/register"
+                        className="font-medium text-blue-600 hover:underline"
+                    >
+                        Registrate
+                    </Link>
+                </p>
+            </section>
         </main>
     )
 }
