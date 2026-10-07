@@ -7,8 +7,6 @@ function RegisterPage() {
         username: '',
         email: '',
         password: '',
-        firstName: '',
-        lastName: '',
     })
 
     const [errors, setErrors] = useState([])
@@ -112,44 +110,6 @@ function RegisterPage() {
                             name="password"
                             type="password"
                             value={form.password}
-                            onChange={handleInputChange}
-                            required
-                            className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-500"
-                        />
-                    </div>
-
-                    <div>
-                        <label
-                            htmlFor="firstName"
-                            className="mb-2 block text-sm font-medium text-gray-700"
-                        >
-                            Nombre
-                        </label>
-
-                        <input
-                            id="firstName"
-                            name="firstName"
-                            type="text"
-                            value={form.firstName}
-                            onChange={handleInputChange}
-                            required
-                            className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-500"
-                        />
-                    </div>
-
-                    <div>
-                        <label
-                            htmlFor="lastName"
-                            className="mb-2 block text-sm font-medium text-gray-700"
-                        >
-                            Apellido
-                        </label>
-
-                        <input
-                            id="lastName"
-                            name="lastName"
-                            type="text"
-                            value={form.lastName}
                             onChange={handleInputChange}
                             required
                             className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-500"
