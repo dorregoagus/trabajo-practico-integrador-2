@@ -39,7 +39,7 @@ function LoginPage() {
             localStorage.setItem('isLogged', 'true')
             handleReset()
             navigate('/')
-        } catch (error) {
+        } catch {
             setError('No se pudo conectar con el servidor')
         } finally {
             setIsLoading(false)

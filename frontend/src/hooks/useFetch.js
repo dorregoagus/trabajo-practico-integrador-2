@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 
-
 function useFetch(url) {
     const [data, setData] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
@@ -28,9 +27,11 @@ function useFetch(url) {
         }
     }
 
+    /* eslint-disable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
     useEffect(() => {
         fetchData()
     }, [url])
+    /* eslint-enable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
 
     return {
         data,

@@ -44,7 +44,7 @@ function RegisterPage() {
 
             handleReset()
             navigate('/login')
-        } catch (error) {
+        } catch {
             setErrors(['No se pudo conectar con el servidor'])
         } finally {
             setIsLoading(false)
